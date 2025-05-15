@@ -1,0 +1,33 @@
+# https://github.com/siemens/kas/blob/master/docs/userguide.rst
+header:
+  version: 18
+  includes:
+    - kas-base.yaml
+
+machine: luckfox-lyra
+target: picocalc-bundle
+
+# scarthgap checkout
+repos:
+  meta-arm:
+    url: https://git.yoctoproject.org/meta-arm
+    commit: 8e0f8af90fefb03f08cd2228cde7a89902a6b37c
+    layers:
+      meta-arm-bsp:
+      meta-arm-toolchain:
+      meta-arm:
+  meta-rockchip:
+    url: https://github.com/JeffyCN/meta-rockchip.git
+    commit: 9e31f26eae5e0c67a40ce5a8e07a9935867c094e
+    layers:
+      .:
+  meta-rauc:
+    url: https://github.com/rauc/meta-rauc.git
+    commit: a0f4a8b9986954239850b9d4256c003c91e6b931
+  meta-picocalc:
+    layers:
+      meta-picocalc-bsp-rockchip:
+
+local_conf_header:
+  image: |
+    INHERIT:append = " rockchip-image"

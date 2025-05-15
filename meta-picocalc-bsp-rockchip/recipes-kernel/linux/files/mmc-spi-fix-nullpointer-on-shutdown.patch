@@ -1,0 +1,16 @@
+diff --git a/drivers/mmc/core/regulator.c b/drivers/mmc/core/regulator.c
+index 4dcbc2281..146eebcc5 100644
+--- a/drivers/mmc/core/regulator.c
++++ b/drivers/mmc/core/regulator.c
+@@ -138,6 +138,11 @@ static int mmc_regulator_set_voltage_if_supported(struct regulator *regulator,
+ {
+ 	int current_uV;
+ 
++	/* There may not always be a regulator. */
++	if(!regulator) {
++		return -ENODEV;
++	}
++
+ 	/*
+ 	 * Check if supported first to avoid errors since we may try several
+ 	 * signal levels during power up and don't want to show errors.

@@ -1,0 +1,17 @@
+[system]
+compatible={SYSTEM_COMPATIBLE}
+bootloader=uboot
+statusfile=/etc/rauc/rauc-slots.status
+
+[keyring]
+path=/etc/rauc/ca.cert.pem
+
+[slot.rootfs.0]
+device={RAUC_SLOT_A_DEVICE}
+type=ext4
+bootname=A
+
+[slot.rootfs.1]
+device={RAUC_SLOT_B_DEVICE}
+type=ext4
+bootname=B
