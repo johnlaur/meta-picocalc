@@ -22,7 +22,6 @@ repos:
       meta-filesystems:
   meta-picocalc:
     layers:
-      meta-picocalc-bsp:
       meta-picocalc-distro:
 
 
