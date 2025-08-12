@@ -4,12 +4,17 @@ SRC_URI += " \
     file://journald.conf \
     file://wlan.network \
     file://98-wifi.link \
+    file://ttyblank.conf \
 "
 
 do_install() {
     install -d ${D}${systemd_unitdir}/network
     install -m 644 ${WORKDIR}/wlan.network ${D}${systemd_unitdir}/network
     install -m 644 ${WORKDIR}/98-wifi.link ${D}${systemd_unitdir}/network
+
+    install -d ${D}${systemd_unitdir}/system/getty@tty1.service.d
+    install -m 0644 ${WORKDIR}/ttyblank.conf \
+        ${D}${systemd_unitdir}/system/getty@tty1.service.d/20-ttyblank.conf
 }
 
 FILES:${PN} += "\
