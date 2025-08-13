@@ -33,6 +33,7 @@ IMAGE_INSTALL += " \
     htop \
     iw \
     iwd \
+    kbd-keymaps \
     kernel-module-rtl8188fu \
     kernel-modules \
     links \
@@ -48,6 +49,7 @@ IMAGE_INSTALL += " \
     shadow \
     sudo \
     systemd-analyze \
+    terminus-font \
     u-boot-fw-config \
     u-boot-rockchip-bootscript \
     usbutils \
