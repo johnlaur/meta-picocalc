@@ -12,7 +12,7 @@ SRC_URI = " \
 
 inherit kernel-arch deploy
 
-S = "${WORKDIR}"
+S = "${UNPACKDIR}"
 B = "${S}/build"
 
 UBOOT_BOOTSCR_TEMPLATE = "${THISDIR}/files/boot.scr.sh.in"
@@ -21,14 +21,14 @@ UBOOT_BOOTSCR_IMG = "${B}/boot.scr"
 
 #PROD_BOOT_ARGS = "${@bb.utils.contains('IMAGE_FEATURES','debug-tweaks','','quiet loglevel=0',d)}"
 
-# This task creates boot.scr.sh in the WORKDIR from the boot.scr.sh.in template
+# This task creates boot.scr.sh in the UNPACKDIR from the boot.scr.sh.in template
 python do_create_boot_scr_sh() {
     # prodBootArgs = d.getVar("PROD_BOOT_ARGS")
 
     with open(d.getVar("UBOOT_BOOTSCR_TEMPLATE"), "r") as f:
         bootScrTemplate = f.read()
 
-    bootScrPath = oe.path.join(d.getVar("WORKDIR"), "boot.scr.sh")
+    bootScrPath = oe.path.join(d.getVar("UNPACKDIR"), "boot.scr.sh")
 
     args = {
     }

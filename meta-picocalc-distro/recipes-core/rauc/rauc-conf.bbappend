@@ -4,12 +4,12 @@ SRC_URI:append := "\
                     file://system.conf.in \
                   "
 
-RAUC_SYSTEMCONF_TEMPLATE = "${WORKDIR}/system.conf.in"
+RAUC_SYSTEMCONF_TEMPLATE = "${UNPACKDIR}/system.conf.in"
 
 # These variables must be defined in the machine config. E.g.
 # RAUC_SLOT_A_DEVICE = "/dev/mmcblk1p2"
 # RAUC_SLOT_B_DEVICE = "/dev/mmcblk1p3"
-# This task creates system.conf in the WORKDIR from the system.conf.in template
+# This task creates system.conf in the UNPACKDIR from the system.conf.in template
 python do_create_system_config() {
     raucSlotADevice = d.getVar("RAUC_SLOT_A_DEVICE")
     raucSlotBDevice = d.getVar("RAUC_SLOT_B_DEVICE")
@@ -23,7 +23,7 @@ python do_create_system_config() {
     with open(d.getVar("RAUC_SYSTEMCONF_TEMPLATE"), "r") as f:
         fileTemplate = f.read()
 
-    filePath = oe.path.join(d.getVar("WORKDIR"), "system.conf")
+    filePath = oe.path.join(d.getVar("UNPACKDIR"), "system.conf")
 
     args = {
         'RAUC_SLOT_A_DEVICE': raucSlotADevice,

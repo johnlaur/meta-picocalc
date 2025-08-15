@@ -8,7 +8,7 @@ SRCREV = "7ce43037212aab03a5cfe441992eee04de7f858d"
 SRC_URI = " \
     git://github.com/kelebek333/rtl8188fu.git;protocol=https;branch=master \
     "
-S = "${WORKDIR}/git"
+S = "${UNPACKDIR}/git"
 
 DEPENDS += "virtual/kernel"
 

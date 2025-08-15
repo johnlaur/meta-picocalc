@@ -4,5 +4,5 @@ SRC_URI += "file://wheel-sudoers"
 
 do_install:append() {
     # Install sudo configuration for members of the wheel group
-    install -m 0440 ${WORKDIR}/wheel-sudoers ${D}/${sysconfdir}/sudoers.d/wheel
+    install -m 0440 ${UNPACKDIR}/wheel-sudoers ${D}/${sysconfdir}/sudoers.d/wheel
 }

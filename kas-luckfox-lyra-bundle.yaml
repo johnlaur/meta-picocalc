@@ -11,19 +11,19 @@ target: picocalc-bundle
 repos:
   meta-arm:
     url: https://git.yoctoproject.org/meta-arm
-    commit: 8e0f8af90fefb03f08cd2228cde7a89902a6b37c
+    commit: 2de04c3d31e119d4bedbea24b9c63a8c113a1ce3
     layers:
       meta-arm-bsp:
       meta-arm-toolchain:
       meta-arm:
   meta-rockchip:
     url: https://github.com/JeffyCN/meta-rockchip.git
-    commit: 9e31f26eae5e0c67a40ce5a8e07a9935867c094e
+    commit: 71aa531a2018724a713c9587059bc53fcbd05a23
     layers:
       .:
   meta-rauc:
     url: https://github.com/rauc/meta-rauc.git
-    commit: a0f4a8b9986954239850b9d4256c003c91e6b931
+    commit: a0b83842d131093e89fa4fefaaa1997f05afdf62
   meta-picocalc:
     layers:
       meta-picocalc-bsp-rockchip:

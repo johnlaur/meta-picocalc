@@ -8,13 +8,13 @@ distro: picocalc-distro
 repos:
   poky:
     url: https://git.yoctoproject.org/poky.git
-    commit: fa7bc4c1a8e1e59d57e6deeaf74f7784975ab9b4
+    commit: db04028d9070f05c3b5dee728473fb234bd24f05
     layers:
       meta:
       meta-poky:
   meta-openembedded:
     url: https://github.com/openembedded/meta-openembedded.git
-    commit: e92d0173a80ea7592c866618ef5293203c50544c
+    commit: dca497d728792e3cb655c78455c2d649af312ce8
     layers:
       meta-oe:
       meta-python:
