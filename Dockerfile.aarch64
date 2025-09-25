@@ -1,0 +1,11 @@
+FROM ghcr.io/siemens/kas/kas:4.7
+
+USER root
+
+RUN apt-get -y update \
+  && apt-get -y install qemu-user qemu-user-binfmt \
+  && dpkg --add-architecture amd64 \
+  && apt-get -y update \
+  && apt-get -y install libc6:amd64 libstdc++6:amd64
+
+USER builder
