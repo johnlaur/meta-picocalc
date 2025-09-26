@@ -29,4 +29,4 @@ do_prepare_host_tools() {
 
 FILES:${PN} = "/boot"
 
-addtask do_prepare_host_tools after do_compile
+addtask do_prepare_host_tools after do_compile before do_install
