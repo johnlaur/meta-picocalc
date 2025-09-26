@@ -93,6 +93,25 @@ More on RAUC: https://rauc.readthedocs.io/
 
 ---
 
+## AARCH64 Host
+
+KAS does not natively support aarch64 hosts. To build on an aarch64 system, additional packages are required in the Docker image. These can be included by manually rebuilding the image.
+
+Use the following command to build the image:
+
+```
+docker build -t ghcr.io/siemens/kas/kas:4.7 -f meta-picocalc/Dockerfile.aarch64 meta-picocalc
+```
+
+This command must be **run before starting** the build.
+Note: It will overwrite the local KAS container. If you need to rebuild the image, you must first remove the existing one:
+
+```
+docker rmi ghcr.io/siemens/kas/kas:4.7
+```
+
+---
+
 ## References
 - [Yocto Project Documentation](https://docs.yoctoproject.org/)
 - [KAS Documentation](https://kas.readthedocs.io/)
