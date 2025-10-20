@@ -1001,133 +1001,31 @@
 	pinctrl-0 = <&rm_io10_i2c2_scl &rm_io11_i2c2_sda>;
         max-frequency = <400000>;
 
-	gt9271: gt9271@5d {
-		status = "okay";
-		compatible = "goodix,gt9271";
-		reg = <0x5d>;
-		pinctrl-names = "default";
-	};
-
-	gt911: gt911@14 {
-		status = "okay";
-		compatible = "goodix,gt911";
-		reg = <0x14>;
-
-		/*
-		// 2.8inch
-		touchscreen-size-x = <480>;
-		touchscreen-size-y = <640>;
-		touchscreen-inverted-y;
-		touchscreen-swapped-x-y;
-		*/
-
-		/*
-		// 3.4inch
-		touchscreen-size-x = <800>;
-		touchscreen-size-y = <800>;
-		*/
-
-		/*
-		// 4.0inch
-		touchscreen-size-x = <800>;
-		touchscreen-size-y = <480>;
-		touchscreen-inverted-x;
-		touchscreen-swapped-x-y;
-		*/
-
-		/*
-		// 7.0inch C / 5.0inch C
-		touchscreen-size-x = <800>;
-		touchscreen-size-y = <480>;
-		*/
-
-		/*
-		// 7inch9
-		touchscreen-size-x = <4096>;
-		touchscreen-size-y = <4096>;
-		touchscreen-inverted-x;
-		touchscreen-swapped-x-y;
-		*/
-
-		/*
-		// 10.1inch / 8.0inch
-		touchscreen-size-x = <800>;
-		touchscreen-size-y = <1280>;
-		touchscreen-inverted-x;
-		touchscreen-swapped-x-y;
-		*/
-
-		/*
-		// 11.9inch
-		touchscreen-inverted-x;
-		touchscreen-swapped-x-y;
-		*/
-
-		/*
-		// 4inch C
-		touchscreen-size-x = <720>;
-		touchscreen-size-y = <720>;
-		*/
-
-		/*
-		// 5inch D
-		touchscreen-inverted-x;
-		touchscreen-inverted-y;
-		*/
-
-		/*
-		// 6inch25
-		touchscreen-inverted-x;
-		touchscreen-inverted-y;
-		*/
-
-		/*
-		//8.8inch
-		*/
-
-	};
-
-	ft5406: ft5406@38 {
-		status = "okay";
-		compatible = "edt,edt-ft5506";
-		reg = <0x38>;
-
-		touchscreen-inverted-x;
-		touchscreen-inverted-y;
-		//touchscreen-swapped-x-y;
-
-		touchscreen-size-x = <800>;
-		touchscreen-size-y = <480>;
-	};
-
-	ws_bl: ws-bl@45 {
-		status = "okay";
-		compatible = "waveshare,dsi-backlight";
-		reg = <0x45>;
-		default-brightness-level = <200>;
-		max-brightness-level = <255>;
-		min-brightness-level = <5>;
-	};
 
 	picocalc_mfd: picocalc-mfd@1f {
 		status = "okay";
 		compatible = "picocalc_mfd","picocalc_kbd";
 		reg = <0x1F>;
 
-		picocalc_mfd_kbd: kbd {
+		picocalc_mfd_kbd: picocalc-mfd-kbd@04 {
 			compatible = "picocalc_mfd_kbd";
+			reg = <0x04>;
+			fifo = <0x09>;
 		};
 
-		picocalc_mfd_bms: bms {
+		picocalc_mfd_bms: picocalc-mfd-bms@0b {
 			compatible = "picocalc_mfd_bms";
+			reg = <0x0B>;
 		};
 
-		picocalc_mfd_bkl: bkl {
+		picocalc_mfd_bkl: picocalc-mfd-bkl@05 {
 			compatible = "picocalc_mfd_bkl";
+			reg = <0x05>;
 		};
 
-		picocalc_mfd_led: led {
+		picocalc_mfd_led: picocalc-mfd-led@0a {
 			compatible = "picocalc_mfd_led";
+			reg = <0x0A>;
 		};
 	};
 
@@ -1237,15 +1135,15 @@
 	ili9488: ili9488@0 {
 		status = "okay";
 		compatible = "ilitek,ili9488";
-        spi-max-frequency = <80000000>;
-        /* spi-max-frequency = <24000000>; */
-        /* spi-max-frequency = <10000000>; */
+		spi-max-frequency = <80000000>;
+		/* spi-max-frequency = <24000000>; */
+		/* spi-max-frequency = <10000000>; */
 		reg = <0>;
 		pinctrl-names = "default";
-    	pinctrl-0 = <&ili9488_pins>;
-    	fps = <30>;
-    	width = <320>;
-    	height = <320>;
+		pinctrl-0 = <&ili9488_pins>;
+		fps = <30>;
+		width = <320>;
+		height = <320>;
 		cs = <&gpio0 RK_PA4 GPIO_ACTIVE_HIGH>;
 		dc = <&gpio0 RK_PA3 GPIO_ACTIVE_HIGH>;
 		rst = <&gpio0 RK_PA2 GPIO_ACTIVE_HIGH>;
