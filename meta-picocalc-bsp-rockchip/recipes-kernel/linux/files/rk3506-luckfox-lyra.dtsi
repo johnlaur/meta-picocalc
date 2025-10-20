@@ -1019,8 +1019,10 @@
 		};
 
 		picocalc_mfd_bkl: picocalc-mfd-bkl@05 {
-			compatible = "picocalc_mfd_bkl";
+			compatible = "picocalc-mfd-bkl";
 			reg = <0x05>;
+			default-brightness = <128>;
+			max-brightness = <255>;
 		};
 
 		picocalc_mfd_led: picocalc-mfd-led@0a {
