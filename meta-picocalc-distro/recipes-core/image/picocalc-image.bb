@@ -27,7 +27,9 @@ IMAGE_INSTALL += " \
     busybox \
     cloud-utils-growpart \
     curl \
+    dtc \
     e2fsprogs-resize2fs \
+    figlet \
     file \
     gdb \
     git \
@@ -42,17 +44,22 @@ IMAGE_INSTALL += " \
     links \
     man-db \
     mtd-utils \
+    netcat \
     ntp \
     openssh \
     opkg \
     overlayfs-tools \
     packagegroup-core-buildessential \
+    picocom \
     rauc \
     rtl8188fu \
+    screen \
+    socat \
     shadow \
     sudo \
     systemd-analyze \
     terminus-font \
+    tmux \
     u-boot-fw-config \
     u-boot-rockchip-bootscript \
     usbutils \
