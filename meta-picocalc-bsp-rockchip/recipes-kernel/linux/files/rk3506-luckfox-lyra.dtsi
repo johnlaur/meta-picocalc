@@ -1004,8 +1004,9 @@
 
 	picocalc_mfd: picocalc-mfd@1f {
 		status = "okay";
-		compatible = "picocalc_mfd","picocalc_kbd";
+		compatible = "picocalc-mfd","picocalc-kbd";
 		reg = <0x1F>;
+		poweroff = <0x0E>;
 
 		picocalc_mfd_kbd: picocalc-mfd-kbd@04 {
 			compatible = "picocalc-mfd-kbd";
