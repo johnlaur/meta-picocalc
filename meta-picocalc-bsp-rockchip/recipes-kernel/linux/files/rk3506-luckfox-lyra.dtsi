@@ -1016,7 +1016,7 @@
 		};
 
 		picocalc_mfd_bms: picocalc-mfd-bms@0b {
-			compatible = "picocalc_mfd_bms";
+			compatible = "picocalc-mfd-bms";
 			reg = <0x0B>;
 		};
 
