@@ -1008,7 +1008,7 @@
 		reg = <0x1F>;
 
 		picocalc_mfd_kbd: picocalc-mfd-kbd@04 {
-			compatible = "picocalc_mfd_kbd";
+			compatible = "picocalc-mfd-kbd";
 			reg = <0x04>;
 			fifo = <0x09>;
 		};
