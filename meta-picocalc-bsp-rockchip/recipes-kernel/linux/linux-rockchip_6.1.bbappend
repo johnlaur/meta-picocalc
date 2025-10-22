@@ -15,6 +15,7 @@ SRC_URI = " \
     file://rauc.cfg \
     file://cgroups.cfg \
     file://fonts.cfg \
+    file://led.cfg \
     file://picocalc.cfg \
     file://removed.cfg \
     file://mmc-spi-fix-nullpointer-on-shutdown.patch \
