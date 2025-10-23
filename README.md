@@ -1,3 +1,6 @@
+## IMPORTANT
+THIS REPO MOVED TO [https://github.com/Calculinux/meta-calculinux](https://github.com/Calculinux/meta-calculinux)
+
 # meta-picocalc-luckfox
 
 This is a **Yocto Project** meta-layer for building a Linux image for the **ClockworkPi PicoCalc** running on the **Luckfox Lyra** board.
